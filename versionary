@@ -32,6 +32,7 @@ FCOS_STREAM_TO_NUM = {
     'stable': 3,
     'next-devel': 10,
     'testing-devel': 20,
+    'tec': 30,
     'rawhide': 91,
     'branched': 92,
     'bodhi-updates-testing': 93,
