@@ -25,6 +25,3 @@ RUN set -xeuo pipefail && \
     dracut $stock_arguments && \
     mv -v /boot/initramfs*.img "/lib/modules/${KERNEL_VERSION}/initramfs.img" && \
     bootc container lint
-
-ARG COM_COREOS_OSNAME
-LABEL com.coreos.osname=$COM_COREOS_OSNAME
