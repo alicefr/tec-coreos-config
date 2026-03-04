@@ -7,6 +7,7 @@ ARG ID=overridden
 ARG VERSION=overridden
 ARG DESCRIPTION=overridden
 ARG STREAM=overridden
+ARG NAME=overridden
 
 FROM ${KBC_IMG} as kbc
 FROM ${CLEVIS_PIN_IMG} as clevis
