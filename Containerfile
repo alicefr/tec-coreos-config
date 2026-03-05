@@ -3,16 +3,16 @@ ARG KBC_IMG="quay.io/trusted-execution-clusters/trustee-attester:fedora-b13fd8a"
 ARG CLEVIS_PIN_IMG="quay.io/trusted-execution-clusters/clevis-pin-trustee"
 ARG IGNITION_IMG="ghcr.io/trusted-execution-clusters/ignition:20260112-85608d6"
 
+FROM ${KBC_IMG} as kbc
+FROM ${CLEVIS_PIN_IMG} as clevis
+FROM ${IGNITION_IMG} as ignition
+FROM ${BASE}
+
 ARG ID=overridden
 ARG VERSION=overridden
 ARG DESCRIPTION=overridden
 ARG STREAM=overridden
 ARG NAME=overridden
-
-FROM ${KBC_IMG} as kbc
-FROM ${CLEVIS_PIN_IMG} as clevis
-FROM ${IGNITION_IMG} as ignition
-FROM ${BASE}
 
 COPY ./usr /usr
 COPY --from=kbc /usr/local/bin/trustee-attester /usr/bin/trustee-attester
